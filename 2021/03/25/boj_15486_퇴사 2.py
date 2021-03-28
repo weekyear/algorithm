@@ -2,15 +2,21 @@ import sys
 sys.stdin = open('boj_15486.txt', 'r')
 
 N = int(input())
-consults = [list(map(int, sys.stdin.readline().split())) for _ in range(N + 1)]
-cache = [0 for consult in consults]
+input = sys.stdin.readline
+cache = [0] * (N + 1)
 
-for c in range(N):
-    T, P = consults[c]
+max_res = 0
+for c in range(N + 1):
+    if c < N:
+        T, P = map(int, input().split())
 
-    if c + T < N + 1:
-        cache[c + T] = max(cache[c + T], cache[c] + P)
+    if max_res < cache[c]:
+        max_res = cache[c]
 
-    cache[c + 1] = max(cache[c + 1], cache[c])
+    if c + T > N:
+        continue
 
-print(cache[N])
+    if cache[c + T] < max_res + P:
+        cache[c + T] = max_res + P
+
+print(max_res)
