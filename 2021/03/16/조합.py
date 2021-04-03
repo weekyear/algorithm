@@ -35,5 +35,5 @@ def permutations_3(array, r, prefix="nothing"):
             for next in permutations_3(temp, r-1, prefix):
                 yield [array[i]] + next
 
-for i in permutations_3([1, 2, 3, 4], 3):
+for i in permutations_3([1, 2, 3], 2):
     print(i, end=' ')
