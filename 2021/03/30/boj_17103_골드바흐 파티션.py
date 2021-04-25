@@ -4,14 +4,14 @@ sys.stdin = open('boj_17103.txt', 'r')
 import math
 
 def get_primary_list(n):
-    array = [1 for _ in range(n+1)]
+    array = [True for _ in range(n+1)]
 
     for i in range(2, int(math.sqrt(n)) + 1):
         if array[i]:
             j = 2
 
         while i * j <= n:
-            array[i * j] = 0
+            array[i * j] = False
             j += 1
 
     return array
