@@ -1,0 +1,1 @@
+SELECT id, my_count FROM (SELECT id1 AS id, count(id1) AS my_count FROM friends GROUP BY id1) AS table1 FULL OUTER JOIN (SELECT id2 AS id, count(id2) AS my_count FROM friends GROUP BY id2) AS table2 ON table1.id = table2.id
