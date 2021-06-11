@@ -212,25 +212,24 @@ fun main(args: Array<String>) {
 //        Sort().selectionSort()
 //    }
 //    println("선택 정렬 시간 : $elapsedSelection")
-
+//
 //    val elapsedInsertion02: Long = measureNanoTime {
 //        Sort().insertionSort_02()
 //    }
 //    println("삽입 정렬 시간 : $elapsedInsertion02")
 //
-//
 //    val elapsedQuickSort: Long = measureNanoTime {
 //        var lstRandom = Random
-////        var lst = mutableListOf(1, 34, 5, 60, 78, 23, 56, 31, 64, 45, 63, 44, 78, 5345, 6, 35634, 74545, 478, 95, 243452, 757, 845, 3534, 243, 6456, 967, 43242, 432)
+//        var lst = mutableListOf(1, 34, 5, 60, 78, 23, 56, 31, 64, 45, 63, 44, 78, 5345, 6, 35634, 74545, 478, 95, 243452, 757, 845, 3534, 243, 6456, 967, 43242, 432)
 //        var lst = mutableListOf(5, 3, 8, 4, 9, 1, 6, 2, 7)
-////        var lst = Sort().createRandomNumberList()
+//        var lst = Sort().createRandomNumberList()
 //        Sort().quickSort(lst, 0, lst.count() - 1)
 //    }
 //    println("퀵 정렬 시간 : $elapsedQuickSort")
 //
 //    val elapsedMergeSort: Long = measureNanoTime {
 //        var lstRandom = Random
-////        var lst = mutableListOf(1, 34, 5, 60, 78, 23, 56, 31, 64, 45, 63, 44, 78, 5345, 6, 35634, 74545, 478, 95, 243452, 757, 845, 3534, 243, 6456, 967, 43242, 432)
+//        var lst = mutableListOf(1, 34, 5, 60, 78, 23, 56, 31, 64, 45, 63, 44, 78, 5345, 6, 35634, 74545, 478, 95, 243452, 757, 845, 3534, 243, 6456, 967, 43242, 432)
 //        var lst = mutableListOf(5, 3, 8, 4, 9, 1, 6, 2, 7)
 //        Sort().mergeSort(lst, 0, lst.count() - 1)
 //    }
