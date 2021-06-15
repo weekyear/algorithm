@@ -21,3 +21,5 @@ def solution(w, h):
 
     answer = w * h - del_num * max_mod
     return answer
+
+print(solution(8, 12))
