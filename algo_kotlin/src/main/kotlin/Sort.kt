@@ -1,5 +1,6 @@
 import kotlin.random.Random
 import kotlin.system.measureNanoTime
+import kotlinx.coroutines.*
 
 class Sort {
     fun createRandomNumberList(): MutableList<Int> {
@@ -241,4 +242,6 @@ fun main(args: Array<String>) {
         println(Sort().heapSort(lst))
     }
     println("합병 정렬 시간 : $elapsedHeapSort")
+
+    val scope = CoroutineScope
 }
