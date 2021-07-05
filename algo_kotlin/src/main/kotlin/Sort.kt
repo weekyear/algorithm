@@ -1,6 +1,5 @@
 import kotlin.random.Random
 import kotlin.system.measureNanoTime
-import kotlinx.coroutines.*
 
 class Sort {
     fun createRandomNumberList(): MutableList<Int> {
@@ -200,6 +199,41 @@ class Sort {
             heapify(array, heapSize, p)
         }
     }
+
+    fun solution(m: IntArray): Int {
+        val queue = mutableListOf<IntArray>()
+        val maxIdx = m.size - 1
+        val destinations = mutableListOf<Int>()
+        val visited = Array(m.size) { false }.toBooleanArray()
+        var answer = 0
+
+        for ((idx, value) in m.withIndex()) {
+            var dest = idx
+            while (m[dest] != 0) {
+                dest += m[dest]
+                dest = if (dest < 0) 0 else dest
+                dest = if (dest > maxIdx) maxIdx else dest
+            }
+            destinations.add(dest)
+        }
+
+        while (queue.size > 0) {
+            val pos = queue[0][0]
+            val step = queue[0][1]
+            queue.removeAt(0)
+
+            for (i in 1..6) {
+                if (pos + i >= maxIdx || destinations[pos + i] >= maxIdx) {
+                    answer = step + 1
+                }
+                if (!visited[pos + i]) {
+                    visited[pos + i] = true
+                    queue.add(intArrayOf(destinations[pos + i], step + 1))
+                }
+            }
+        }
+        return answer
+    }
 }
 
 fun main(args: Array<String>) {
@@ -242,6 +276,4 @@ fun main(args: Array<String>) {
         println(Sort().heapSort(lst))
     }
     println("합병 정렬 시간 : $elapsedHeapSort")
-
-    val scope = CoroutineScope
 }
